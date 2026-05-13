@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  items: CollectionEntry<'works'>[];
+}
+
+const { items } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const resolveImage = (src: string) =>
+  src.startsWith('http') ? src : `${base}${src.startsWith('/') ? src : `/${src}`}`;
+---
+
+{items.length === 0 ? (
+  <p class="empty">No works here yet.</p>
+) : (
+  <ul class="gallery">
+    {items.map(({ data }) => (
+      <li class="gallery-item">
+        <figure>
+          <img src={resolveImage(data.image)} alt={data.alt ?? data.title} loading="lazy" />
+          <figcaption>
+            <strong>{data.title}</strong>
+            <span class="meta">
+              {[data.year, data.medium, data.dimensions].filter(Boolean).join(' · ')}
+            </span>
+          </figcaption>
+        </figure>
+      </li>
+    ))}
+  </ul>
+)}
