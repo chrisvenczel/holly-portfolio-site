@@ -1,8 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// GitHub Pages project site: https://chrisvenczel.github.io/holly-portfolio-site/
+// Custom domain (GitHub Pages): https://hollyalainearts.com
 export default defineConfig({
-  site: 'https://chrisvenczel.github.io',
-  base: '/holly-portfolio-site',
+  site: 'https://hollyalainearts.com',
 });

@@ -1,6 +1,6 @@
 ---
 title: Oscar
-category: Painting 
+category: painting
 year: 2025
 medium: Gouache on canvas panel
 dimensions: 11 × 14 in
