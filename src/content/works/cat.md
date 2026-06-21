@@ -1,10 +1,10 @@
 ---
 title: Oscar
-category: drawing
+category: Painting 
 year: 2025
-medium: Gauche on canvas panel
+medium: Gouache on canvas panel
 dimensions: 11 × 14 in
 image: /images/oscar.png
-alt: A gauche painting of Oscar the cat.
+alt: A gouache painting of Oscar the cat.
 order: 1
 ---
