@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+
+const works = (await getCollection('works'))
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+---
+
+<Layout title="Art Gallery | Holly Alaine Arts">
+  <section id="gallery" class="gallery-section">
+    <header class="section-head section-head--center">
+      <h2>Gallery</h2>
+    </header>
+    <Gallery items={works} />
+  </section>
+</Layout>
