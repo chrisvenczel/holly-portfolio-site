@@ -1,9 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const featuredImage = `${base}/images/featured.png`;
+
+const navCards = [
+  { href: `${base}/gallery`,   label: 'Art Gallery',           bg: `${base}/images/nav-gallery.jpg` },
+  { href: `${base}/events`,    label: 'Events & Classes',      bg: `${base}/images/nav-events.jpg` },
+  { href: `${base}/live-art`,  label: 'Live Art Performance',  bg: `${base}/images/nav-live-art.jpg` },
+  { href: `${base}/about`,     label: 'About the Artist',      bg: `${base}/images/nav-about.jpg` },
+];
 ---
 
 <Layout title="Holly Alaine Arts | Portfolio">
@@ -22,4 +28,12 @@ const featuredImage = `${base}/images/featured.png`;
       <img src={featuredImage} alt="Holly Alaine Staples in her studio, surrounded by her artwork" />
     </figure>
   </section>
+
+  <nav class="nav-grid" aria-label="Site sections">
+    {navCards.map(({ href, label, bg }) => (
+      <a href={href} class="nav-card" style={`--card-bg: url('${bg}')`}>
+        <span class="nav-card__label">{label}</span>
+      </a>
+    ))}
+  </nav>
 </Layout>
