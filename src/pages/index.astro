@@ -1,13 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Gallery from '../components/Gallery.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const featuredImage = `${base}/images/featured.png`;
-
-const works = (await getCollection('works'))
-  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 ---
 
 <Layout title="Holly Alaine Arts | Portfolio">
@@ -25,63 +21,5 @@ const works = (await getCollection('works'))
     <figure class="hero-image">
       <img src={featuredImage} alt="Holly Alaine Staples in her studio, surrounded by her artwork" />
     </figure>
-  </section>
-
-  <section id="gallery" class="gallery-section">
-    <header class="section-head section-head--center">
-      <h2>Gallery</h2>
-    </header>
-    <Gallery items={works} />
-  </section>
-
-
-
-  <section id="contact" class="contact">
-    <div class="contact-grid">
-      <figure class="contact-image">
-        <img src={`${base}/images/bird.png`} alt="Colored-pencil drawing of a parrot by Holly Alaine Staples" />
-      </figure>
-
-      <div class="contact-body">
-        <h2>Get in touch</h2>
-        <p class="contact-lede">For commissions, classes, live art, or anything else — send a note.</p>
-
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-        >
-      <div class="field">
-        <label for="contact-name">Name</label>
-        <input id="contact-name" name="name" type="text" required autocomplete="name" />
-      </div>
-
-      <div class="field">
-        <label for="contact-email">Email</label>
-        <input id="contact-email" name="email" type="email" required autocomplete="email" />
-      </div>
-
-      <div class="field">
-        <label for="contact-subject">Subject</label>
-        <select id="contact-subject" name="subject">
-          <option value="Commission">Commission</option>
-          <option value="Art education / classes">Art education / classes</option>
-          <option value="Face / body painting">Face  / body painting</option>
-          <option value="Live art performance">Live art performance</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="contact-message">Message</label>
-        <textarea id="contact-message" name="message" rows="5" required></textarea>
-      </div>
-
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot" />
-
-          <button type="submit">Send message</button>
-        </form>
-      </div>
-    </div>
   </section>
 </Layout>

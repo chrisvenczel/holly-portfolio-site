@@ -2,6 +2,10 @@
 
 Portfolio site for Holly — paintings, drawings, and photography. Built with [Astro](https://astro.build/) as a static site and deployed to GitHub Pages.
 
+## Links
+
+- [Contact Form](https://formspree.io)
+
 ## Local development
 
 Requires Node.js 20.3+ (Node 22 recommended) and [pnpm](https://pnpm.io/).
@@ -22,13 +26,13 @@ Each piece is a markdown file in `src/content/works/`. Create a new `.md` file w
 ```markdown
 ---
 title: Sunset Study
-category: painting   # one of: painting | drawing | photo
+category: painting # one of: painting | drawing | photo
 year: 2025
 medium: Oil on canvas
 dimensions: 18 × 24 in
 image: /images/sunset-study.jpg
 alt: Description of the image for accessibility.
-order: 2             # lower numbers appear first
+order: 2 # lower numbers appear first
 ---
 ```
 
