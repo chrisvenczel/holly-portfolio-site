@@ -1,8 +1,8 @@
 ---
 title: Live art
-category: photograph
+category: photo
 year: 2026
-medium: Photograph of live art 
+medium: Photograph of live art
 dimensions: 11 × 14 in
 image: nav-live-art.jpg
 alt: A photograph of live art performance
