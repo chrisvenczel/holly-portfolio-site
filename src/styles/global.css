@@ -3,7 +3,7 @@
   --text: #1a1a1a;
   --links: #21843f;
   --accent: rgb(129, 186, 129);
-  --muted: #6b6b6b;
+  --muted: #292929;
   --bg: #fafaf7;
   --border: #e6e3dc;
   --font-sans:
@@ -310,7 +310,7 @@ code {
 }
 
 .nav-card:hover::before {
-  filter: blur(1px) brightness(0.7);
+  filter: blur(0px) brightness(0.7);
   transform: scale(1.08);
 }
 
